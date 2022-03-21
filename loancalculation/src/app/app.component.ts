@@ -53,18 +53,18 @@ export class AppComponent implements OnInit {
       {
         this.RemainingBalance=this.Balance-this.YearlyInterest-this.YearlyAmount;
         console.log("Year: "+Year+" Balance: "+ this.Balance+" Interest: "+this.YearlyInterest +" Principal: "+this.YearlyAmount+" Remaining Balance: "+this.RemainingBalance);
-        // this.Calculation={
-        //   "id":Year,
-        //   "Year": Year,
-        //   "Balance":this.Balance,
-        //   "Interest":this.YearlyInterest,
-        //   "Principal":this.YearlyAmount,
-        //   "RBalance":this.RemainingBalance
-        // };
-        // this.ds.pushdata(this.Calculation).subscribe();
+        this.Calculation={
+          "id":Year,
+          "Year": Year,
+          "Balance":this.Balance,
+          "Interest":this.YearlyInterest,
+          "Principal":this.YearlyAmount,
+          "RBalance":this.RemainingBalance
+        };
+        this.ds.pushdata(this.Calculation).subscribe(data=>console.log(data));
         this.Balance=this.RemainingBalance;
       }
     }
-    this.ds.getdata().subscribe(data=>console.log(data));
+    // this.ds.getdata().subscribe(data=>console.log(data));
   }
 }

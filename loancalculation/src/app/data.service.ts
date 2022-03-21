@@ -13,7 +13,7 @@ export class DataService {
   }
 
   pushdata(data:any){
-    return this.ht.put("http://localhost:3000/loan/",data);
+    return this.ht.put("http://localhost:3000/loan/"+data.id,data);
   }
 
   deletedata(id:any){
